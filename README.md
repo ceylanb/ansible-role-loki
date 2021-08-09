@@ -2,6 +2,7 @@
 
 An Ansible role for installing and executing loki that is a scanner of simple indicators of compromise (IoCs).
 
+```
   ┌────────────────────────┐
   │ Get The Latest Release │
   │    of Loki Zip File    │
@@ -21,6 +22,7 @@ An Ansible role for installing and executing loki that is a scanner of simple in
           │  Run   │
           │loki.exe│
           └────────┘
+```
 
 ## OS Platforms
 
