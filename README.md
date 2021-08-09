@@ -1,6 +1,6 @@
 # ansible-loki
 
-An Ansible role for installing and executing loki that is a scanner of simple indicators of compromise (IoCs).
+An Ansible role for installing and executing [loki](https://github.com/Neo23x0/Loki) that is a scanner of simple indicators of compromise (IoCs).
 
 ```
   ┌────────────────────────┐
