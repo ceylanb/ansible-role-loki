@@ -1,0 +1,9 @@
+---
+allow_duplicates: true
+dependencies: []
+
+galaxy_info:
+  author: ceylanb
+  description: Loki install
+  company: "Erciyes University"
+  license: "license (BSD, MIT)"

@@ -1,0 +1,4 @@
+loki_latest_github_api: "https://api.github.com/repos/Neo23x0/Loki/releases/latest"
+loki_install_location: "c:\\ansible"
+loki_download_file: loki-latest
+file_ext: .zip

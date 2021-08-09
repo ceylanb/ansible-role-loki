@@ -1,0 +1,35 @@
+---
+- name: Create directory
+  win_file:
+    path: "{{ loki_install_location }}"
+    state: directory
+
+- name: Get latest loki zip file location from github
+  win_uri:
+    url: "{{ loki_latest_github_api }}"
+    return_content: true
+  register: json_response
+
+- name: Print returned json dictionary
+  debug:
+    msg: "{{ json_response.json.assets[0].browser_download_url }}"
+
+- name: Get loki zip
+  win_get_url:
+    url: "{{ json_response.json.assets[0].browser_download_url }}"
+    dest: "{{ loki_install_location }}/{{ loki_download_file }}{{ file_ext }}"
+
+- name: Unzip loki.zip
+  win_unzip:
+    src: "{{ loki_install_location }}/{{ loki_download_file }}{{ file_ext }}"
+    dest: "{{ loki_install_location }}"
+
+- name: Upgrade loki
+  win_command: "{{ loki_install_location }}\\loki\\loki-upgrader.exe"
+  args:
+    chdir: "{{ loki_install_location }}\\loki"
+
+- name: Execute loki
+  win_command: "{{ loki_install_location }}\\loki\\loki.exe"
+  args:
+    chdir: "{{ loki_install_location }}\\loki"
